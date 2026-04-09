@@ -47,8 +47,8 @@ export default function Navbar() {
                                 <Car size={20} className="text-main" />
                             </div>
                             <div>
-                                <p className="font-display font-bold text-content text-lg leading-none">Bayrem</p>
-                                <p className="text-brand-400 text-xs font-medium tracking-widest">RENT A CAR</p>
+                                <p className="font-display font-bold text-content text-lg leading-none">Car</p>
+                                <p className="text-brand-400 text-xs font-medium tracking-widest">RENTAL</p>
                             </div>
                         </Link>
 
@@ -158,8 +158,8 @@ export default function Navbar() {
                                         <Car size={20} className="text-main" />
                                     </div>
                                     <div>
-                                        <p className="font-display font-bold text-content text-lg leading-none">Bayrem</p>
-                                        <p className="text-brand-400 text-xs font-medium tracking-widest">RENT A CAR</p>
+                                        <p className="font-display font-bold text-content text-lg leading-none">Car</p>
+                                        <p className="text-brand-400 text-xs font-medium tracking-widest">RENTAL</p>
                                     </div>
                                 </div>
                             </div>

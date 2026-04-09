@@ -183,7 +183,7 @@ export default function HeroSection() {
                                 <div className="relative rounded-3xl overflow-hidden ring-glow">
                                     <img
                                         src="https://images.unsplash.com/photo-1563721911289-ada2924d66f1?auto=format&fit=crop&q=80&w=2000"
-                                        alt="Mercedes GLC – Bayrem Rent a Car"
+                                        alt="Mercedes GLC – Car Rental"
                                         className="w-full object-cover rounded-3xl"
                                         style={{ maxHeight: '420px' }}
                                     />

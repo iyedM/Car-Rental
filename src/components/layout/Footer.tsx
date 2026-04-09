@@ -31,8 +31,8 @@ export default function Footer() {
                                 <Car size={22} className="text-[#1c1917]" />
                             </div>
                             <div>
-                                <p className="font-display font-bold text-content text-xl leading-none">Bayrem</p>
-                                <p className="text-brand-400 text-xs font-medium tracking-widest">RENT A CAR</p>
+                                <p className="font-display font-bold text-content text-xl leading-none">Car</p>
+                                <p className="text-brand-400 text-xs font-medium tracking-widest">RENTAL</p>
                             </div>
                         </Link>
                         <p className="text-content/50 text-sm leading-relaxed mb-6">
@@ -117,13 +117,13 @@ export default function Footer() {
                                     <p className="text-content/80 text-sm font-medium group-hover:text-brand-400 transition-colors">+216 22 307 649</p>
                                 </div>
                             </a>
-                            <a href="mailto:contact@bayremrentacar.tn" className="flex items-center gap-3 group">
+                            <a href="mailto:contact@carrental.tn" className="flex items-center gap-3 group">
                                 <div className="w-8 h-8 glass-card rounded-lg flex items-center justify-center flex-shrink-0">
                                     <Mail size={14} className="text-brand-400" />
                                 </div>
                                 <div>
                                     <p className="text-content/30 text-xs">Email</p>
-                                    <p className="text-content/80 text-sm font-medium group-hover:text-brand-400 transition-colors">contact@bayrem.tn</p>
+                                    <p className="text-content/80 text-sm font-medium group-hover:text-brand-400 transition-colors">contact@carrental.tn</p>
                                 </div>
                             </a>
 
@@ -146,7 +146,7 @@ export default function Footer() {
                 {/* Bottom bar */}
                 <div className="mt-16 pt-8 border-t border-content/10 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <p className="text-content/30 text-sm">
-                        © 2026 Bayrem Rent a Car. Tous droits réservés.
+                        © 2026 Car Rental. Tous droits réservés.
                     </p>
                     <p className="text-content/20 text-xs">
                         Tunis · La Marsa · Aéroport Tunis-Carthage · Djerba

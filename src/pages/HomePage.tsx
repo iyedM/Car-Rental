@@ -90,7 +90,7 @@ export default function HomePage() {
                             viewport={{ once: true }}
                             className="text-center mb-12"
                         >
-                            <h2 className="section-title mb-4">Pourquoi Choisir Bayrem?</h2>
+                            <h2 className="section-title mb-4">Pourquoi Choisir Car Rental?</h2>
                             <p className="section-subtitle">Un service pensé pour votre confort et votre tranquillité d'esprit</p>
                         </motion.div>
 

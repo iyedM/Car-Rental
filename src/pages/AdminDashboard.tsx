@@ -147,7 +147,7 @@ export default function AdminDashboard() {
                                     <Car size={18} className="text-dark-900" />
                                 </div>
                                 <div>
-                                    <p className="font-display font-bold text-content leading-none">Bayrem</p>
+                                    <p className="font-display font-bold text-content leading-none">Car Rental</p>
                                     <p className="text-brand-400 text-xs tracking-widest">ADMIN</p>
                                 </div>
                             </Link>

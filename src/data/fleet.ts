@@ -39,11 +39,11 @@ export interface Review {
 }
 
 export const REVIEWS: Review[] = [
-    { id: 'r1', carId: 'car-1', author: 'Ahmed Ben Ali', rating: 5, comment: 'Service impeccable! La voiture était propre et en excellent état. Je recommande vivement Bayrem Rent a Car.', date: '2026-03-15', avatar: 'https://i.pravatar.cc/48?img=1' },
+    { id: 'r1', carId: 'car-1', author: 'Ahmed Ben Ali', rating: 5, comment: 'Service impeccable! La voiture était propre et en excellent état. Je recommande vivement Car Rental.', date: '2026-03-15', avatar: 'https://i.pravatar.cc/48?img=1' },
     { id: 'r2', carId: 'car-1', author: 'Sophie Martin', rating: 5, comment: 'Perfect experience! Very professional team and the car was amazing. Will definitely rent again.', date: '2026-03-20', avatar: 'https://i.pravatar.cc/48?img=5' },
     { id: 'r3', carId: 'car-2', author: 'Mohamed Trabelsi', rating: 4, comment: 'Très bonne expérience, le Mercedes était très confortable. Le processus de réservation via WhatsApp était simple.', date: '2026-03-10', avatar: 'https://i.pravatar.cc/48?img=8' },
     { id: 'r4', carId: 'car-3', author: 'Leila Bouzid', rating: 5, comment: 'Classe C impeccable! Prix compétitif et service client au top. Je reviendrai certainement.', date: '2026-03-25', avatar: 'https://i.pravatar.cc/48?img=9' },
-    { id: 'r5', carId: 'car-4', author: 'Jean-Pierre Dubois', rating: 5, comment: 'Le GLC est une merveille! Confort absolu pour un road trip de Tunis à Djerba. Merci Bayrem!', date: '2026-04-01', avatar: 'https://i.pravatar.cc/48?img=12' },
+    { id: 'r5', carId: 'car-4', author: 'Jean-Pierre Dubois', rating: 5, comment: 'Le GLC est une merveille! Confort absolu pour un road trip de Tunis à Djerba. Merci Car Rental!', date: '2026-04-01', avatar: 'https://i.pravatar.cc/48?img=12' },
     { id: 'r6', carId: 'car-5', author: 'Fatima Saad', rating: 4, comment: 'Range Rover Evoque superbe. Un peu plus chère que les autres mais ça vaut vraiment le coup.', date: '2026-04-03', avatar: 'https://i.pravatar.cc/48?img=20' },
 ];
 
