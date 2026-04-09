@@ -39,13 +39,13 @@ export default function HeroSection() {
                     animate={{ scale: [1, 1.2, 1], opacity: [0.15, 0.25, 0.15] }}
                     transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
                     className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full"
-                    style={{ background: 'radial-gradient(circle, rgba(249,115,22,0.2) 0%, transparent 70%)' }}
+                    style={{ background: 'radial-gradient(circle, rgba(197,155,39,0.15) 0%, transparent 70%)' }}
                 />
                 <motion.div
                     animate={{ scale: [1, 1.15, 1], opacity: [0.1, 0.2, 0.1] }}
                     transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
                     className="absolute -bottom-40 -right-40 w-[700px] h-[700px] rounded-full"
-                    style={{ background: 'radial-gradient(circle, rgba(234,88,12,0.15) 0%, transparent 70%)' }}
+                    style={{ background: 'radial-gradient(circle, rgba(197,155,39,0.1) 0%, transparent 70%)' }}
                 />
 
                 {/* Floating particles */}
@@ -85,7 +85,7 @@ export default function HeroSection() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, delay: 0.1 }}
-                            className="font-display font-black text-5xl md:text-6xl lg:text-7xl text-dark-900 leading-[1.05] mb-6"
+                            className="font-display font-black text-5xl md:text-6xl lg:text-7xl text-content leading-[1.05] mb-6"
                             style={{ whiteSpace: 'pre-line' }}
                         >
                             {t('hero.title').split('\n').map((line, i) => (
@@ -151,11 +151,11 @@ export default function HeroSection() {
                             transition={{ duration: 0.5, delay: 0.6 }}
                             className="flex flex-wrap gap-6 mt-10 pt-10 border-t border-content/10"
                         >
-                            <div className="flex items-center gap-2 text-dark-900/50 text-sm">
+                            <div className="flex items-center gap-2 text-content/50 text-sm">
                                 <Shield size={16} className="text-brand-400" />
                                 <span>Assurance incluse</span>
                             </div>
-                            <div className="flex items-center gap-2 text-dark-900/50 text-sm">
+                            <div className="flex items-center gap-2 text-content/50 text-sm">
                                 <Clock size={16} className="text-brand-400" />
                                 <span>Réponse en 15 min</span>
                             </div>
@@ -182,12 +182,12 @@ export default function HeroSection() {
                             >
                                 <div className="relative rounded-3xl overflow-hidden ring-glow">
                                     <img
-                                        src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=90"
+                                        src="https://images.unsplash.com/photo-1563721911289-ada2924d66f1?auto=format&fit=crop&q=80&w=2000"
                                         alt="Mercedes GLC – Bayrem Rent a Car"
                                         className="w-full object-cover rounded-3xl"
                                         style={{ maxHeight: '420px' }}
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent rounded-3xl" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-main/80 via-transparent to-transparent rounded-3xl" />
 
                                     {/* Overlay info card */}
                                     <div className="absolute bottom-4 left-4 right-4">

@@ -164,7 +164,7 @@ export const FLEET: Car[] = [
         ac: true,
         gps: true,
         bluetooth: true,
-        image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1563721911289-ada2924d66f1?auto=format&fit=crop&q=80&w=800',
         gallery: [
             'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=1200&q=80',
             'https://images.unsplash.com/photo-1563720223185-11003d516935?w=1200&q=80',

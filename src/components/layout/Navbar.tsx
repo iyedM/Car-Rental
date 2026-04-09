@@ -44,10 +44,10 @@ export default function Navbar() {
                         {/* Logo */}
                         <Link to="/" className="flex items-center gap-3 group">
                             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center shadow-glow group-hover:shadow-glow-lg transition-all duration-300">
-                                <Car size={20} className="text-dark-900" />
+                                <Car size={20} className="text-main" />
                             </div>
                             <div>
-                                <p className="font-display font-bold text-dark-900 text-lg leading-none">Bayrem</p>
+                                <p className="font-display font-bold text-content text-lg leading-none">Bayrem</p>
                                 <p className="text-brand-400 text-xs font-medium tracking-widest">RENT A CAR</p>
                             </div>
                         </Link>
@@ -111,12 +111,12 @@ export default function Navbar() {
                             {/* Admin Dashboard */}
                             <Link
                                 to="/admin"
-                                className="hidden md:flex items-center gap-2 relative glass-orange px-4 py-2 rounded-xl text-brand-400 hover:text-dark-900 text-sm font-medium transition-all duration-200 hover:bg-brand-500"
+                                className="hidden md:flex items-center gap-2 relative glass-orange px-4 py-2 rounded-xl text-brand-400 hover:text-content text-sm font-medium transition-all duration-200 hover:bg-brand-500"
                             >
                                 <BarChart3 size={16} />
                                 <span>Admin</span>
                                 {notificationCount > 0 && (
-                                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-brand-500 rounded-full text-dark-900 text-xs flex items-center justify-center font-bold">
+                                    <span className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-brand-500 rounded-full text-content text-xs flex items-center justify-center font-bold">
                                         {notificationCount}
                                     </span>
                                 )}
@@ -125,7 +125,7 @@ export default function Navbar() {
                             {/* Mobile menu toggle */}
                             <button
                                 onClick={() => setMobileOpen(!mobileOpen)}
-                                className="lg:hidden glass-card p-2.5 rounded-xl text-dark-900/70 hover:text-dark-900 transition-colors"
+                                className="lg:hidden glass-card p-2.5 rounded-xl text-content/70 hover:text-content transition-colors"
                             >
                                 {mobileOpen ? <X size={20} /> : <Menu size={20} />}
                             </button>
@@ -152,13 +152,13 @@ export default function Navbar() {
                             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                             className="mobile-menu lg:hidden"
                         >
-                            <div className="p-6 border-b border-dark-900/6">
+                            <div className="p-6 border-b border-subtle/10">
                                 <div className="flex items-center gap-3">
                                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center">
-                                        <Car size={20} className="text-dark-900" />
+                                        <Car size={20} className="text-main" />
                                     </div>
                                     <div>
-                                        <p className="font-display font-bold text-dark-900 text-lg leading-none">Bayrem</p>
+                                        <p className="font-display font-bold text-content text-lg leading-none">Bayrem</p>
                                         <p className="text-brand-400 text-xs font-medium tracking-widest">RENT A CAR</p>
                                     </div>
                                 </div>
@@ -171,7 +171,7 @@ export default function Navbar() {
                                         to={link.href}
                                         className={`flex items-center px-4 py-3.5 rounded-xl font-medium transition-all duration-200 ${isActive(link.href)
                                             ? 'bg-brand-500/15 text-brand-400 border border-brand-500/20'
-                                            : 'text-dark-900/60 hover:text-dark-900 hover:bg-dark-900/5'
+                                            : 'text-content/60 hover:text-content hover:bg-main/5'
                                             }`}
                                     >
                                         {link.label}
@@ -179,19 +179,19 @@ export default function Navbar() {
                                 ))}
                                 <Link
                                     to="/admin"
-                                    className="flex items-center gap-2 px-4 py-3.5 rounded-xl text-dark-900/60 hover:text-dark-900 hover:bg-dark-900/5 font-medium transition-all duration-200"
+                                    className="flex items-center gap-2 px-4 py-3.5 rounded-xl text-content/60 hover:text-content hover:bg-main/5 font-medium transition-all duration-200"
                                 >
                                     <BarChart3 size={18} />
                                     Admin Dashboard
                                 </Link>
                             </div>
 
-                            <div className="p-6 border-t border-dark-900/6 space-y-3">
-                                <a href="tel:+21622307649" className="flex items-center gap-3 text-dark-900/60 hover:text-dark-900 transition-colors">
+                            <div className="p-6 border-t border-content/6 space-y-3">
+                                <a href="tel:+21622307649" className="flex items-center gap-3 text-content/60 hover:text-content transition-colors">
                                     <Phone size={16} className="text-brand-400" />
                                     <span className="text-sm">+216 22 307 649</span>
                                 </a>
-                                <div className="flex items-center gap-3 text-dark-900/60">
+                                <div className="flex items-center gap-3 text-content/60">
                                     <MapPin size={16} className="text-brand-400" />
                                     <span className="text-sm">Tunis · Djerba · La Marsa · Aéroport</span>
                                 </div>

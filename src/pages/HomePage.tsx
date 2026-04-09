@@ -2,7 +2,6 @@ import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import HeroSection from '../components/home/HeroSection';
 import QuickBookingWidget from '../components/home/QuickBookingWidget';
-import ImpactSection from '../components/home/ImpactSection';
 import { motion } from 'framer-motion';
 import { FLEET } from '../data/fleet';
 import CarCard from '../components/cars/CarCard';
@@ -80,8 +79,7 @@ export default function HomePage() {
                     </div>
                 </section>
 
-                {/* Impact Section */}
-                <ImpactSection />
+
 
                 {/* Services Section */}
                 <section className="section">
