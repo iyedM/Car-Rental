@@ -39,8 +39,8 @@ function AppRoutes() {
             <div className="min-h-screen flex items-center justify-center">
               <div className="text-center">
                 <p className="text-8xl font-display font-black gradient-text mb-4">404</p>
-                <h1 className="text-white text-2xl font-semibold mb-2">Page introuvable</h1>
-                <p className="text-white/40 mb-8">Cette page n'existe pas.</p>
+                <h1 className="text-content text-2xl font-semibold mb-2">Page introuvable</h1>
+                <p className="text-content/40 mb-8">Cette page n'existe pas.</p>
                 <a href="/" className="btn-primary">Retour à l'accueil</a>
               </div>
             </div>

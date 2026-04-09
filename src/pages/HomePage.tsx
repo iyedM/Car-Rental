@@ -114,8 +114,8 @@ export default function HomePage() {
                                     className="card group"
                                 >
                                     <div className="text-4xl mb-4">{service.emoji}</div>
-                                    <h3 className="font-display font-semibold text-white text-lg mb-2">{service.title}</h3>
-                                    <p className="text-white/50 text-sm leading-relaxed">{service.desc}</p>
+                                    <h3 className="font-display font-semibold text-content text-lg mb-2">{service.title}</h3>
+                                    <p className="text-content/50 text-sm leading-relaxed">{service.desc}</p>
                                 </motion.div>
                             ))}
                         </div>
@@ -138,15 +138,15 @@ export default function HomePage() {
                             <div className="absolute inset-0 bg-gradient-to-r from-brand-500/5 to-transparent" />
                             <div className="relative flex flex-col md:flex-row items-center justify-between gap-8 p-10 lg:p-12">
                                 <div>
-                                    <h2 className="font-display font-black text-3xl md:text-4xl text-white mb-3">
+                                    <h2 className="font-display font-black text-3xl md:text-4xl text-content mb-3">
                                         Prêt à prendre la route?
                                     </h2>
-                                    <p className="text-white/60 text-lg">
+                                    <p className="text-content/60 text-lg">
                                         Appelez-nous ou réservez directement via WhatsApp
                                     </p>
                                     <div className="flex items-center gap-2 mt-4">
                                         <MapPin size={16} className="text-brand-400" />
-                                        <span className="text-white/50 text-sm">Tunis · La Marsa · Aéroport · Djerba</span>
+                                        <span className="text-content/50 text-sm">Tunis · La Marsa · Aéroport · Djerba</span>
                                     </div>
                                 </div>
                                 <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">

@@ -44,15 +44,15 @@ export default function QuickBookingWidget() {
                     <CarIcon size={20} className="text-brand-400" />
                 </div>
                 <div>
-                    <h3 className="font-display font-bold text-white text-xl">{t('booking.title')}</h3>
-                    <p className="text-white/40 text-sm">{t('booking.subtitle')}</p>
+                    <h3 className="font-display font-bold text-dark-900 text-xl">{t('booking.title')}</h3>
+                    <p className="text-dark-900/40 text-sm">{t('booking.subtitle')}</p>
                 </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                 {/* Car select */}
                 <div className="lg:col-span-1">
-                    <label className="block text-white/50 text-xs font-medium mb-2 uppercase tracking-wide">
+                    <label className="block text-dark-900/50 text-xs font-medium mb-2 uppercase tracking-wide">
                         {t('booking.car')}
                     </label>
                     <select
@@ -68,7 +68,7 @@ export default function QuickBookingWidget() {
 
                 {/* Start date */}
                 <div>
-                    <label className="block text-white/50 text-xs font-medium mb-2 uppercase tracking-wide">
+                    <label className="block text-dark-900/50 text-xs font-medium mb-2 uppercase tracking-wide">
                         {t('booking.startDate')}
                     </label>
                     <input
@@ -82,7 +82,7 @@ export default function QuickBookingWidget() {
 
                 {/* End date */}
                 <div>
-                    <label className="block text-white/50 text-xs font-medium mb-2 uppercase tracking-wide">
+                    <label className="block text-dark-900/50 text-xs font-medium mb-2 uppercase tracking-wide">
                         {t('booking.endDate')}
                     </label>
                     <input
@@ -96,7 +96,7 @@ export default function QuickBookingWidget() {
 
                 {/* Location */}
                 <div>
-                    <label className="block text-white/50 text-xs font-medium mb-2 uppercase tracking-wide">
+                    <label className="block text-dark-900/50 text-xs font-medium mb-2 uppercase tracking-wide">
                         {t('booking.location')}
                     </label>
                     <div className="relative">
@@ -115,17 +115,17 @@ export default function QuickBookingWidget() {
             </div>
 
             {/* Price preview + CTA */}
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-white/6">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-dark-900/6">
                 <div className="flex flex-wrap items-center gap-4 text-sm">
-                    <div className="flex items-center gap-2 text-white/50">
+                    <div className="flex items-center gap-2 text-dark-900/50">
                         <Calendar size={15} className="text-brand-400" />
                         <span>{days} jour{days > 1 ? 's' : ''}</span>
                     </div>
-                    <div className="h-4 w-px bg-white/10" />
+                    <div className="h-4 w-px bg-dark-900/10" />
                     <div className="flex items-baseline gap-1">
-                        <span className="text-white font-bold text-2xl font-display">{total}</span>
+                        <span className="text-dark-900 font-bold text-2xl font-display">{total}</span>
                         <span className="text-brand-400 font-medium">DT</span>
-                        <span className="text-white/30 text-xs">total estimé</span>
+                        <span className="text-dark-900/30 text-xs">total estimé</span>
                     </div>
                 </div>
 

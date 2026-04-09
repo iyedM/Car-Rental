@@ -128,7 +128,7 @@ export default function AdminDashboard() {
         : bookings.filter(b => b.status === filterStatus);
 
     return (
-        <div className="min-h-screen bg-dark-900 flex">
+        <div className="min-h-screen bg-main flex">
             {/* Sidebar */}
             <AnimatePresence>
                 {(sidebarOpen || true) && (
@@ -141,13 +141,13 @@ export default function AdminDashboard() {
               transition-transform duration-300 md:sticky md:top-0 md:h-screen`}
                     >
                         {/* Logo */}
-                        <div className="p-6 border-b border-white/6">
+                        <div className="p-6 border-b border-content/10">
                             <Link to="/" className="flex items-center gap-3">
                                 <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center">
-                                    <Car size={18} className="text-white" />
+                                    <Car size={18} className="text-dark-900" />
                                 </div>
                                 <div>
-                                    <p className="font-display font-bold text-white leading-none">Bayrem</p>
+                                    <p className="font-display font-bold text-content leading-none">Bayrem</p>
                                     <p className="text-brand-400 text-xs tracking-widest">ADMIN</p>
                                 </div>
                             </Link>
@@ -164,7 +164,7 @@ export default function AdminDashboard() {
                                     {item.icon}
                                     <span className="flex-1 text-left text-sm">{item.label}</span>
                                     {item.badge ? (
-                                        <span className="w-5 h-5 bg-brand-500 rounded-full text-white text-xs flex items-center justify-center font-bold">
+                                        <span className="w-5 h-5 bg-brand-500 rounded-full text-[#1c1917] text-xs flex items-center justify-center font-bold">
                                             {item.badge}
                                         </span>
                                     ) : null}
@@ -172,7 +172,7 @@ export default function AdminDashboard() {
                             ))}
 
                             {/* Simulate Activity Button */}
-                            <div className="pt-4 mt-4 border-t border-white/6">
+                            <div className="pt-4 mt-4 border-t border-content/10">
                                 <button
                                     onClick={simulateActivity}
                                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-sm transition-all duration-200 ${simulatingActivity
@@ -190,7 +190,7 @@ export default function AdminDashboard() {
                         </nav>
 
                         {/* Bottom */}
-                        <div className="p-4 border-t border-white/6">
+                        <div className="p-4 border-t border-content/10">
                             <Link to="/" className="sidebar-link w-full flex items-center gap-3 text-sm">
                                 <LogOut size={16} />
                                 <span>Retour au site</span>
@@ -210,29 +210,29 @@ export default function AdminDashboard() {
                 {/* Top bar */}
                 <header className="glass sticky top-0 z-10 px-6 py-4 flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                        <button onClick={() => setSidebarOpen(true)} className="md:hidden text-white/60 hover:text-white">
+                        <button onClick={() => setSidebarOpen(true)} className="md:hidden text-dark-900/60 hover:text-dark-900">
                             <Menu size={20} />
                         </button>
-                        <h1 className="font-display font-bold text-white text-lg capitalize">{activeView}</h1>
+                        <h1 className="font-display font-bold text-content text-lg capitalize">{activeView}</h1>
                     </div>
                     <div className="flex items-center gap-3">
                         <button
                             onClick={refreshData}
-                            className="w-9 h-9 glass-card rounded-xl flex items-center justify-center text-white/50 hover:text-white transition-colors"
+                            className="w-9 h-9 glass-card rounded-xl flex items-center justify-center text-dark-900/50 hover:text-dark-900 transition-colors"
                         >
                             <RefreshCw size={16} />
                         </button>
                         <div className="relative">
-                            <button className="w-9 h-9 glass-card rounded-xl flex items-center justify-center text-white/50 hover:text-white transition-colors">
+                            <button className="w-9 h-9 glass-card rounded-xl flex items-center justify-center text-content/50 hover:text-content transition-colors">
                                 <Bell size={16} />
                             </button>
                             {notificationCount > 0 && (
-                                <span className="absolute -top-1 -right-1 w-4 h-4 bg-brand-500 rounded-full text-white text-xs flex items-center justify-center font-bold">
+                                <span className="absolute -top-1 -right-1 w-4 h-4 bg-brand-500 rounded-full text-dark-900 text-xs flex items-center justify-center font-bold">
                                     {notificationCount > 9 ? '9+' : notificationCount}
                                 </span>
                             )}
                         </div>
-                        <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center text-white text-sm font-bold">
+                        <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center text-[#1c1917] text-sm font-bold">
                             A
                         </div>
                     </div>
@@ -253,7 +253,7 @@ export default function AdminDashboard() {
                                 </div>
                                 <div>
                                     <p className="text-brand-300 font-semibold text-sm">💡 Insight IA — Opportunité détectée</p>
-                                    <p className="text-white/60 text-sm mt-0.5">
+                                    <p className="text-dark-900/60 text-sm mt-0.5">
                                         Forte demande sur les SUVs ce mois-ci (+47%). Considérez augmenter les tarifs de +10% sur le Mercedes GLC et Range Rover Evoque pour maximiser vos revenus.
                                     </p>
                                 </div>
@@ -315,8 +315,8 @@ export default function AdminDashboard() {
                                                 {kpi.trend}
                                             </span>
                                         </div>
-                                        <p className="font-display font-black text-2xl text-white">{kpi.value}</p>
-                                        <p className="text-white/40 text-xs mt-1">{kpi.label}</p>
+                                        <p className="font-display font-black text-2xl text-content">{kpi.value}</p>
+                                        <p className="text-dark-900/40 text-xs mt-1">{kpi.label}</p>
                                         {/* Glow on hover */}
                                         <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                             style={{ background: `radial-gradient(ellipse at center, ${kpi.bg} 0%, transparent 70%)` }} />
@@ -335,8 +335,8 @@ export default function AdminDashboard() {
                                 >
                                     <div className="flex items-center justify-between mb-6">
                                         <div>
-                                            <h3 className="font-semibold text-white">Évolution des revenus</h3>
-                                            <p className="text-white/40 text-xs mt-0.5">12 derniers mois</p>
+                                            <h3 className="font-semibold text-content">Évolution des revenus</h3>
+                                            <p className="text-dark-900/40 text-xs mt-0.5">12 derniers mois</p>
                                         </div>
                                         <span className="badge-green text-xs">+35% VS 2025</span>
                                     </div>
@@ -348,12 +348,12 @@ export default function AdminDashboard() {
                                                     <stop offset="95%" stopColor="#f97316" stopOpacity={0} />
                                                 </linearGradient>
                                             </defs>
-                                            <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" />
-                                            <XAxis dataKey="month" tick={{ fontSize: 11, fill: 'rgba(255,255,255,0.3)' }} axisLine={false} tickLine={false} />
-                                            <YAxis tick={{ fontSize: 11, fill: 'rgba(255,255,255,0.3)' }} axisLine={false} tickLine={false} />
+                                            <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.06)" />
+                                            <XAxis dataKey="month" tick={{ fontSize: 11, fill: 'rgba(0,0,0,0.4)' }} axisLine={false} tickLine={false} />
+                                            <YAxis tick={{ fontSize: 11, fill: 'rgba(0,0,0,0.4)' }} axisLine={false} tickLine={false} />
                                             <Tooltip
-                                                contentStyle={{ background: '#1a1a25', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, color: '#fff' }}
-                                                labelStyle={{ color: 'rgba(255,255,255,0.6)' }}
+                                                contentStyle={{ background: 'var(--bg-surface)', border: '1px solid rgb(var(--border-subtle) / 0.1)', borderRadius: 12, color: 'var(--text-main)' }}
+                                                labelStyle={{ color: 'rgba(0,0,0,0.6)' }}
                                                 formatter={(v: any) => [`${v} DT`, 'Revenu']}
                                             />
                                             <Area type="monotone" dataKey="revenue" stroke="#f97316" strokeWidth={2} fill="url(#revenueGrad)" />
@@ -368,14 +368,14 @@ export default function AdminDashboard() {
                                     transition={{ delay: 0.35 }}
                                     className="glass-card rounded-2xl p-6"
                                 >
-                                    <h3 className="font-semibold text-white mb-1">Utilisation flotte</h3>
-                                    <p className="text-white/40 text-xs mb-6">10 véhicules au total</p>
+                                    <h3 className="font-semibold text-dark-900 mb-1">Utilisation flotte</h3>
+                                    <p className="text-dark-900/40 text-xs mb-6">10 véhicules au total</p>
                                     <ResponsiveContainer width="100%" height={160}>
                                         <PieChart>
                                             <Pie data={fleetData} cx="50%" cy="50%" innerRadius={45} outerRadius={70} paddingAngle={3} dataKey="value">
                                                 {fleetData.map((entry, i) => <Cell key={i} fill={entry.color} />)}
                                             </Pie>
-                                            <Tooltip contentStyle={{ background: '#1a1a25', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, color: '#fff' }} />
+                                            <Tooltip contentStyle={{ background: 'var(--bg-surface)', border: '1px solid rgb(var(--border-subtle) / 0.1)', borderRadius: 12, color: 'var(--text-main)' }} />
                                         </PieChart>
                                     </ResponsiveContainer>
                                     <div className="space-y-2 mt-2">
@@ -383,9 +383,9 @@ export default function AdminDashboard() {
                                             <div key={d.name} className="flex items-center justify-between">
                                                 <div className="flex items-center gap-2">
                                                     <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: d.color }} />
-                                                    <span className="text-white/50 text-xs">{d.name}</span>
+                                                    <span className="text-dark-900/50 text-xs">{d.name}</span>
                                                 </div>
-                                                <span className="text-white text-xs font-semibold">{d.value}</span>
+                                                <span className="text-dark-900 text-xs font-semibold">{d.value}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -399,8 +399,8 @@ export default function AdminDashboard() {
                                 transition={{ delay: 0.4 }}
                                 className="glass-card rounded-2xl overflow-hidden"
                             >
-                                <div className="flex items-center justify-between p-6 border-b border-white/5">
-                                    <h3 className="font-semibold text-white">Réservations récentes</h3>
+                                <div className="flex items-center justify-between p-6 border-b border-dark-900/5">
+                                    <h3 className="font-semibold text-content">Réservations récentes</h3>
                                     <button onClick={() => setActiveView('reservations')} className="flex items-center gap-1 text-brand-400 text-sm hover:text-brand-300 transition-colors">
                                         Voir tout <ChevronRight size={14} />
                                     </button>
@@ -424,18 +424,18 @@ export default function AdminDashboard() {
                                                     <td><span className="font-mono text-brand-400 text-xs">{b.id}</span></td>
                                                     <td>
                                                         <div>
-                                                            <p className="text-white text-sm font-medium">{b.customerName}</p>
-                                                            <p className="text-white/30 text-xs">{b.location}</p>
+                                                            <p className="text-content text-sm font-medium">{b.customerName}</p>
+                                                            <p className="text-dark-900/30 text-xs">{b.location}</p>
                                                         </div>
                                                     </td>
-                                                    <td><span className="text-white/70 text-sm">{b.carName}</span></td>
+                                                    <td><span className="text-dark-900/70 text-sm">{b.carName}</span></td>
                                                     <td>
                                                         <div className="text-xs">
-                                                            <p className="text-white/60">{b.startDate}</p>
-                                                            <p className="text-white/30">→ {b.endDate}</p>
+                                                            <p className="text-dark-900/60">{b.startDate}</p>
+                                                            <p className="text-dark-900/30">→ {b.endDate}</p>
                                                         </div>
                                                     </td>
-                                                    <td><span className="font-semibold text-white">{b.totalPrice} DT</span></td>
+                                                    <td><span className="font-semibold text-content">{b.totalPrice} DT</span></td>
                                                     <td>
                                                         <span className={`badge text-xs ${STATUS_MAP[b.status].class}`}>
                                                             {STATUS_MAP[b.status].label}
@@ -479,8 +479,8 @@ export default function AdminDashboard() {
                                         key={status}
                                         onClick={() => setFilterStatus(status)}
                                         className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${filterStatus === status
-                                            ? 'bg-brand-500 text-white'
-                                            : 'glass-card text-white/50 hover:text-white'
+                                            ? 'bg-brand-500 text-dark-900'
+                                            : 'glass-card text-dark-900/50 hover:text-dark-900'
                                             }`}
                                     >
                                         {status === 'all' ? 'Toutes' : STATUS_MAP[status as BookingStatus].label}
@@ -520,13 +520,13 @@ export default function AdminDashboard() {
                                                         exit={{ opacity: 0 }}
                                                     >
                                                         <td><span className="font-mono text-brand-400 text-xs">{b.id}</span></td>
-                                                        <td><p className="text-white font-medium text-sm">{b.customerName}</p></td>
-                                                        <td><p className="text-white/50 text-xs">{b.customerPhone}</p></td>
-                                                        <td><p className="text-white/70 text-sm">{b.carName}</p></td>
-                                                        <td><p className="text-white/50 text-xs">{b.location}</p></td>
-                                                        <td><span className="text-white/60 text-xs">{b.startDate}</span></td>
-                                                        <td><span className="text-white/60 text-xs">{b.endDate}</span></td>
-                                                        <td><span className="text-white text-sm">{b.days}j</span></td>
+                                                        <td><p className="text-dark-900 font-medium text-sm">{b.customerName}</p></td>
+                                                        <td><p className="text-dark-900/50 text-xs">{b.customerPhone}</p></td>
+                                                        <td><p className="text-dark-900/70 text-sm">{b.carName}</p></td>
+                                                        <td><p className="text-dark-900/50 text-xs">{b.location}</p></td>
+                                                        <td><span className="text-dark-900/60 text-xs">{b.startDate}</span></td>
+                                                        <td><span className="text-dark-900/60 text-xs">{b.endDate}</span></td>
+                                                        <td><span className="text-dark-900 text-sm">{b.days}j</span></td>
                                                         <td><span className="text-brand-400 font-bold text-sm">{b.totalPrice} DT</span></td>
                                                         <td>
                                                             <span className={`badge text-xs ${b.paymentMethod === 'online' ? 'badge-blue' : 'badge-orange'}`}>
@@ -568,7 +568,7 @@ export default function AdminDashboard() {
                                                                     target="_blank"
                                                                     rel="noopener noreferrer"
                                                                     title="WhatsApp"
-                                                                    className="w-7 h-7 rounded-lg flex items-center justify-center text-white hover:opacity-80 transition-opacity"
+                                                                    className="w-7 h-7 rounded-lg flex items-center justify-center text-dark-900 hover:opacity-80 transition-opacity"
                                                                     style={{ background: '#25D366' }}
                                                                 >
                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
@@ -603,8 +603,8 @@ export default function AdminDashboard() {
                                         <div className="absolute inset-0 bg-gradient-to-t from-dark-900 to-transparent" />
                                         <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
                                             <div>
-                                                <p className="text-white font-semibold text-sm">{car.name}</p>
-                                                <p className="text-white/50 text-xs">{car.category}</p>
+                                                <p className="text-dark-900 font-semibold text-sm">{car.name}</p>
+                                                <p className="text-dark-900/50 text-xs">{car.category}</p>
                                             </div>
                                             <span className={`badge text-xs ${car.available ? 'badge-green' : 'badge-red'}`}>
                                                 {car.available ? 'Disponible' : 'Loué'}
@@ -615,15 +615,15 @@ export default function AdminDashboard() {
                                         <div className="flex items-center justify-between mb-3">
                                             <div className="flex items-center gap-1">
                                                 <Star size={12} className="star-filled fill-current" />
-                                                <span className="text-white text-sm font-semibold">{car.rating}</span>
-                                                <span className="text-white/30 text-xs">({car.reviews})</span>
+                                                <span className="text-dark-900 text-sm font-semibold">{car.rating}</span>
+                                                <span className="text-dark-900/30 text-xs">({car.reviews})</span>
                                             </div>
                                             <span className="font-display font-bold text-brand-400">{car.price} DT/j</span>
                                         </div>
                                         <div className="flex gap-2">
                                             <Link
                                                 to={`/voitures/${car.id}`}
-                                                className="flex-1 py-2 text-center text-xs font-medium glass-card rounded-lg text-white/60 hover:text-white transition-colors"
+                                                className="flex-1 py-2 text-center text-xs font-medium glass-card rounded-lg text-dark-900/60 hover:text-dark-900 transition-colors"
                                             >
                                                 Voir page
                                             </Link>
@@ -642,13 +642,13 @@ export default function AdminDashboard() {
                         <div className="space-y-6">
                             {/* Revenue & Bookings bar chart */}
                             <div className="glass-card rounded-2xl p-6">
-                                <h3 className="font-semibold text-white mb-6">Réservations & Revenus mensuels</h3>
+                                <h3 className="font-semibold text-content mb-6">Réservations & Revenus mensuels</h3>
                                 <ResponsiveContainer width="100%" height={280}>
                                     <BarChart data={revenueData} margin={{ top: 0, right: 0, left: -15, bottom: 0 }}>
-                                        <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" />
-                                        <XAxis dataKey="month" tick={{ fontSize: 11, fill: 'rgba(255,255,255,0.3)' }} axisLine={false} tickLine={false} />
-                                        <YAxis tick={{ fontSize: 11, fill: 'rgba(255,255,255,0.3)' }} axisLine={false} tickLine={false} />
-                                        <Tooltip contentStyle={{ background: '#1a1a25', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, color: '#fff' }} />
+                                        <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.06)" />
+                                        <XAxis dataKey="month" tick={{ fontSize: 11, fill: 'rgba(0,0,0,0.4)' }} axisLine={false} tickLine={false} />
+                                        <YAxis tick={{ fontSize: 11, fill: 'rgba(0,0,0,0.4)' }} axisLine={false} tickLine={false} />
+                                        <Tooltip contentStyle={{ background: 'var(--bg-surface)', border: '1px solid rgb(var(--border-subtle) / 0.1)', borderRadius: 12, color: 'var(--text-main)' }} />
                                         <Legend />
                                         <Bar dataKey="revenue" name="Revenu (DT)" fill="#f97316" radius={[4, 4, 0, 0]} />
                                         <Bar dataKey="bookings" name="Réservations" fill="#8b5cf6" radius={[4, 4, 0, 0]} />
@@ -658,13 +658,13 @@ export default function AdminDashboard() {
 
                             {/* Car performance */}
                             <div className="glass-card rounded-2xl p-6">
-                                <h3 className="font-semibold text-white mb-6">Performance par véhicule</h3>
+                                <h3 className="font-semibold text-content mb-6">Performance par véhicule</h3>
                                 <ResponsiveContainer width="100%" height={240}>
                                     <BarChart data={carPerf} layout="vertical" margin={{ top: 0, right: 20, left: 0, bottom: 0 }}>
-                                        <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" />
-                                        <XAxis type="number" tick={{ fontSize: 11, fill: 'rgba(255,255,255,0.3)' }} axisLine={false} tickLine={false} />
-                                        <YAxis dataKey="name" type="category" tick={{ fontSize: 11, fill: 'rgba(255,255,255,0.5)' }} axisLine={false} tickLine={false} width={140} />
-                                        <Tooltip contentStyle={{ background: '#1a1a25', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, color: '#fff' }} />
+                                        <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.06)" />
+                                        <XAxis type="number" tick={{ fontSize: 11, fill: 'rgba(0,0,0,0.4)' }} axisLine={false} tickLine={false} />
+                                        <YAxis dataKey="name" type="category" tick={{ fontSize: 11, fill: 'rgba(0,0,0,0.6)' }} axisLine={false} tickLine={false} width={140} />
+                                        <Tooltip contentStyle={{ background: 'var(--bg-surface)', border: '1px solid rgb(var(--border-subtle) / 0.1)', borderRadius: 12, color: 'var(--text-main)' }} />
                                         <Bar dataKey="revenue" name="Revenu (DT)" fill="#f97316" radius={[0, 4, 4, 0]} />
                                     </BarChart>
                                 </ResponsiveContainer>
@@ -681,7 +681,7 @@ export default function AdminDashboard() {
                                     <div key={item.label} className="stat-card text-center">
                                         <div className="text-3xl mb-3">{item.icon}</div>
                                         <p className={`font-display font-black text-2xl ${item.color}`}>{item.value}</p>
-                                        <p className="text-white/40 text-xs mt-1">{item.label}</p>
+                                        <p className="text-dark-900/40 text-xs mt-1">{item.label}</p>
                                     </div>
                                 ))}
                             </div>

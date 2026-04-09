@@ -108,23 +108,23 @@ export default function BookingPage() {
                             <CheckCircle size={48} className="text-emerald-400" />
                         </motion.div>
                         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
-                            <h1 className="font-display font-black text-4xl text-white mb-4">Réservation Confirmée! 🎉</h1>
-                            <p className="text-white/60 text-lg mb-2">Votre réservation <span className="text-brand-400 font-bold">{bookingId}</span> a bien été reçue.</p>
-                            <p className="text-white/40 text-sm mb-8">Notre équipe vous contactera dans les 15 prochaines minutes au <strong className="text-white/60">{phone}</strong>.</p>
+                            <h1 className="font-display font-black text-4xl text-content mb-4">Réservation Confirmée! 🎉</h1>
+                            <p className="text-content/60 text-lg mb-2">Votre réservation <span className="text-brand-400 font-bold">{bookingId}</span> a bien été reçue.</p>
+                            <p className="text-content/40 text-sm mb-8">Notre équipe vous contactera dans les 15 prochaines minutes au <strong className="text-content/60">{phone}</strong>.</p>
 
                             <div className="glass-card rounded-2xl p-6 text-left mb-8">
                                 <div className="flex items-center gap-4 mb-4">
                                     <img src={selectedCar.image} alt={selectedCar.name} className="w-20 h-14 object-cover rounded-xl" />
                                     <div>
-                                        <p className="font-semibold text-white">{selectedCar.name}</p>
-                                        <p className="text-white/40 text-sm">{startDate} → {endDate}</p>
+                                        <p className="font-semibold text-content">{selectedCar.name}</p>
+                                        <p className="text-content/40 text-sm">{startDate} → {endDate}</p>
                                     </div>
                                 </div>
                                 <div className="grid grid-cols-2 gap-3 text-sm">
-                                    <div><span className="text-white/40">Durée:</span> <span className="text-white">{days} jours</span></div>
-                                    <div><span className="text-white/40">Lieu:</span> <span className="text-white">{location}</span></div>
-                                    <div><span className="text-white/40">Total:</span> <span className="text-brand-400 font-bold">{total} DT</span></div>
-                                    <div><span className="text-white/40">Paiement:</span> <span className="text-white">{payment === 'on_delivery' ? 'À la livraison' : 'En ligne'}</span></div>
+                                    <div><span className="text-content/40">Durée:</span> <span className="text-content">{days} jours</span></div>
+                                    <div><span className="text-content/40">Lieu:</span> <span className="text-content">{location}</span></div>
+                                    <div><span className="text-dark-900/40">Total:</span> <span className="text-brand-400 font-bold">{total} DT</span></div>
+                                    <div><span className="text-content/40">Paiement:</span> <span className="text-content">{payment === 'on_delivery' ? 'À la livraison' : 'En ligne'}</span></div>
                                 </div>
                             </div>
 
@@ -169,16 +169,16 @@ export default function BookingPage() {
                         {stepLabels.map((s, i) => (
                             <div key={s.num} className="flex items-center">
                                 <div className="flex items-center gap-2">
-                                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${step > s.num ? 'bg-emerald-500 text-white' : step === s.num ? 'bg-brand-500 text-white shadow-glow' : 'bg-dark-600 text-white/30'
+                                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${step > s.num ? 'bg-emerald-500 text-dark-900' : step === s.num ? 'bg-brand-500 text-dark-900 shadow-glow' : 'bg-dark-600 text-dark-900/30'
                                         }`}>
                                         {step > s.num ? '✓' : s.num}
                                     </div>
-                                    <span className={`text-sm font-medium hidden sm:block transition-colors ${step === s.num ? 'text-white' : 'text-white/30'}`}>
+                                    <span className={`text-sm font-medium hidden sm:block transition-colors ${step === s.num ? 'text-content' : 'text-content/30'}`}>
                                         {s.label}
                                     </span>
                                 </div>
                                 {i < stepLabels.length - 1 && (
-                                    <div className={`w-12 md:w-24 h-px mx-3 transition-colors ${step > s.num ? 'bg-emerald-500/60' : 'bg-white/10'}`} />
+                                    <div className={`w-12 md:w-24 h-px mx-3 transition-colors ${step > s.num ? 'bg-emerald-500/60' : 'bg-dark-900/10'}`} />
                                 )}
                             </div>
                         ))}
@@ -189,12 +189,12 @@ export default function BookingPage() {
                         {step === 1 && (
                             <motion.div key="step1" initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -30 }}>
                                 <div className="glass-card rounded-3xl p-6 lg:p-8 space-y-5">
-                                    <h2 className="font-display font-bold text-white text-xl flex items-center gap-2">
+                                    <h2 className="font-display font-bold text-content text-xl flex items-center gap-2">
                                         <Calendar size={20} className="text-brand-400" /> Sélectionnez votre véhicule et vos dates
                                     </h2>
 
                                     <div>
-                                        <label className="block text-white/40 text-xs uppercase tracking-wide mb-2">{t('booking.car')}</label>
+                                        <label className="block text-content/40 text-xs uppercase tracking-wide mb-2">{t('booking.car')}</label>
                                         <select value={carId} onChange={e => setCarId(e.target.value)} className="input">
                                             {FLEET.filter(c => c.available).map(car => (
                                                 <option key={car.id} value={car.id}>{car.name} – {car.price} DT/jour</option>
@@ -206,28 +206,28 @@ export default function BookingPage() {
                                     <div className="glass-card rounded-2xl p-4 flex items-center gap-4">
                                         <img src={selectedCar.image} alt={selectedCar.name} className="w-20 h-14 object-cover rounded-xl flex-shrink-0" />
                                         <div className="flex-1 min-w-0">
-                                            <p className="font-semibold text-white">{selectedCar.name}</p>
-                                            <p className="text-white/40 text-sm">{selectedCar.category} · {selectedCar.transmission} · {selectedCar.fuel}</p>
+                                            <p className="font-semibold text-content">{selectedCar.name}</p>
+                                            <p className="text-content/40 text-sm">{selectedCar.category} · {selectedCar.transmission} · {selectedCar.fuel}</p>
                                         </div>
                                         <div className="text-right flex-shrink-0">
                                             <p className="font-bold text-brand-400 text-lg">{selectedCar.price} DT</p>
-                                            <p className="text-white/30 text-xs">/jour</p>
+                                            <p className="text-content/30 text-xs">/jour</p>
                                         </div>
                                     </div>
 
                                     <div className="grid sm:grid-cols-2 gap-4">
                                         <div>
-                                            <label className="block text-white/40 text-xs uppercase tracking-wide mb-2">{t('booking.startDate')}</label>
+                                            <label className="block text-content/40 text-xs uppercase tracking-wide mb-2">{t('booking.startDate')}</label>
                                             <input type="date" value={startDate} min={today} onChange={e => setStartDate(e.target.value)} className="input" />
                                         </div>
                                         <div>
-                                            <label className="block text-white/40 text-xs uppercase tracking-wide mb-2">{t('booking.endDate')}</label>
+                                            <label className="block text-content/40 text-xs uppercase tracking-wide mb-2">{t('booking.endDate')}</label>
                                             <input type="date" value={endDate} min={startDate} onChange={e => setEndDate(e.target.value)} className="input" />
                                         </div>
                                     </div>
 
                                     <div>
-                                        <label className="block text-white/40 text-xs uppercase tracking-wide mb-2">{t('booking.location')}</label>
+                                        <label className="block text-content/40 text-xs uppercase tracking-wide mb-2">{t('booking.location')}</label>
                                         <div className="relative">
                                             <MapPin size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-brand-400" />
                                             <select value={location} onChange={e => setLocation(e.target.value)} className="input pl-10">
@@ -238,7 +238,7 @@ export default function BookingPage() {
 
                                     {/* Price preview */}
                                     <div className="flex items-center justify-between px-4 py-3 bg-brand-500/10 border border-brand-500/20 rounded-xl">
-                                        <span className="text-white/60 text-sm">{days} jours × {selectedCar.price} DT</span>
+                                        <span className="text-content/60 text-sm">{days} jours × {selectedCar.price} DT</span>
                                         <span className="font-display font-bold text-lg text-brand-400">{total} DT estimé</span>
                                     </div>
 
@@ -253,20 +253,20 @@ export default function BookingPage() {
                         {step === 2 && (
                             <motion.div key="step2" initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -30 }}>
                                 <div className="glass-card rounded-3xl p-6 lg:p-8 space-y-5">
-                                    <h2 className="font-display font-bold text-white text-xl flex items-center gap-2">
+                                    <h2 className="font-display font-bold text-content text-xl flex items-center gap-2">
                                         <User size={20} className="text-brand-400" /> Vos informations personnelles
                                     </h2>
 
                                     <div className="grid sm:grid-cols-2 gap-4">
                                         <div>
-                                            <label className="block text-white/40 text-xs uppercase tracking-wide mb-2">{t('booking.name')} *</label>
+                                            <label className="block text-content/40 text-xs uppercase tracking-wide mb-2">{t('booking.name')} *</label>
                                             <div className="relative">
                                                 <User size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-brand-400" />
                                                 <input type="text" placeholder="Ahmed Ben Ali" value={name} onChange={e => setName(e.target.value)} className="input pl-10" />
                                             </div>
                                         </div>
                                         <div>
-                                            <label className="block text-white/40 text-xs uppercase tracking-wide mb-2">{t('booking.phone')} *</label>
+                                            <label className="block text-content/40 text-xs uppercase tracking-wide mb-2">{t('booking.phone')} *</label>
                                             <div className="relative">
                                                 <Phone size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-brand-400" />
                                                 <input type="tel" placeholder="+216 22 307 649" value={phone} onChange={e => setPhone(e.target.value)} className="input pl-10" />
@@ -275,7 +275,7 @@ export default function BookingPage() {
                                     </div>
 
                                     <div>
-                                        <label className="block text-white/40 text-xs uppercase tracking-wide mb-2">{t('booking.email')} *</label>
+                                        <label className="block text-content/40 text-xs uppercase tracking-wide mb-2">{t('booking.email')} *</label>
                                         <div className="relative">
                                             <Mail size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-brand-400" />
                                             <input type="email" placeholder="votre@email.com" value={email} onChange={e => setEmail(e.target.value)} className="input pl-10" />
@@ -283,7 +283,7 @@ export default function BookingPage() {
                                     </div>
 
                                     <div>
-                                        <label className="block text-white/40 text-xs uppercase tracking-wide mb-2">{t('booking.payment')}</label>
+                                        <label className="block text-content/40 text-xs uppercase tracking-wide mb-2">{t('booking.payment')}</label>
                                         <div className="grid grid-cols-2 gap-3">
                                             {[
                                                 { value: 'on_delivery', label: '💵 À la livraison', desc: 'Payez à la remise des clés' },
@@ -293,12 +293,12 @@ export default function BookingPage() {
                                                     key={opt.value}
                                                     onClick={() => setPayment(opt.value as any)}
                                                     className={`p-4 rounded-2xl text-left transition-all duration-200 border ${payment === opt.value
-                                                            ? 'border-brand-500/50 bg-brand-500/10'
-                                                            : 'border-white/8 glass-card hover:border-white/20'
+                                                        ? 'border-brand-500/50 bg-brand-500/10'
+                                                        : 'border-dark-900/8 glass-card hover:border-dark-900/20'
                                                         }`}
                                                 >
-                                                    <p className="font-semibold text-white text-sm mb-1">{opt.label}</p>
-                                                    <p className="text-white/40 text-xs">{opt.desc}</p>
+                                                    <p className="font-semibold text-content text-sm mb-1">{opt.label}</p>
+                                                    <p className="text-content/40 text-xs">{opt.desc}</p>
                                                 </button>
                                             ))}
                                         </div>
@@ -310,7 +310,7 @@ export default function BookingPage() {
                                                 animate={{ opacity: 1, height: 'auto' }}
                                                 className="mt-4 glass-card rounded-2xl p-4 border border-brand-500/20 space-y-3"
                                             >
-                                                <div className="flex items-center gap-2 text-white/60 text-xs mb-3">
+                                                <div className="flex items-center gap-2 text-content/60 text-xs mb-3">
                                                     <CreditCard size={14} className="text-brand-400" />
                                                     <span>Entrez vos informations de carte (simulation)</span>
                                                 </div>
@@ -324,7 +324,7 @@ export default function BookingPage() {
                                     </div>
 
                                     <div>
-                                        <label className="block text-white/40 text-xs uppercase tracking-wide mb-2">Notes / demandes spéciales</label>
+                                        <label className="block text-content/40 text-xs uppercase tracking-wide mb-2">Notes / demandes spéciales</label>
                                         <textarea
                                             placeholder="Ex: Vol AF1234, siège bébé requis..."
                                             value={notes}
@@ -348,14 +348,14 @@ export default function BookingPage() {
                         {step === 3 && (
                             <motion.div key="step3" initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -30 }}>
                                 <div className="glass-card rounded-3xl p-6 lg:p-8 space-y-6">
-                                    <h2 className="font-display font-bold text-white text-xl">Récapitulatif de votre réservation</h2>
+                                    <h2 className="font-display font-bold text-content text-xl">Récapitulatif de votre réservation</h2>
 
                                     {/* Car */}
                                     <div className="glass-card rounded-2xl p-4 flex items-center gap-4">
                                         <img src={selectedCar.image} alt={selectedCar.name} className="w-24 h-16 object-cover rounded-xl flex-shrink-0" />
                                         <div className="flex-1">
-                                            <p className="font-bold text-white text-lg">{selectedCar.name}</p>
-                                            <p className="text-white/40 text-sm">{selectedCar.year} · {selectedCar.transmission} · {selectedCar.fuel}</p>
+                                            <p className="font-bold text-content text-lg">{selectedCar.name}</p>
+                                            <p className="text-content/40 text-sm">{selectedCar.year} · {selectedCar.transmission} · {selectedCar.fuel}</p>
                                         </div>
                                     </div>
 
@@ -372,8 +372,8 @@ export default function BookingPage() {
                                             { label: 'Paiement', value: payment === 'on_delivery' ? 'À la livraison' : 'En ligne' },
                                         ].map(item => (
                                             <div key={item.label} className="glass-card rounded-xl p-3">
-                                                <p className="text-white/40 text-xs mb-1">{item.label}</p>
-                                                <p className="text-white text-sm font-medium truncate">{item.value}</p>
+                                                <p className="text-content/40 text-xs mb-1">{item.label}</p>
+                                                <p className="text-content text-sm font-medium truncate">{item.value}</p>
                                             </div>
                                         ))}
                                     </div>
@@ -381,12 +381,12 @@ export default function BookingPage() {
                                     {/* Total */}
                                     <div className="flex items-center justify-between glass-orange rounded-2xl p-5">
                                         <div>
-                                            <p className="text-white/60 text-sm">{days} jours × {selectedCar.price} DT/jour</p>
-                                            <p className="text-white/30 text-xs mt-0.5">Assurance tous risques incluse</p>
+                                            <p className="text-content/60 text-sm">{days} jours × {selectedCar.price} DT/jour</p>
+                                            <p className="text-content/30 text-xs mt-0.5">Assurance tous risques incluse</p>
                                         </div>
                                         <div className="text-right">
                                             <p className="font-display font-black text-3xl gradient-text">{total} DT</p>
-                                            <p className="text-white/30 text-xs">TTC</p>
+                                            <p className="text-content/30 text-xs">TTC</p>
                                         </div>
                                     </div>
 
@@ -406,7 +406,7 @@ export default function BookingPage() {
                                     </div>
 
                                     <div className="text-center">
-                                        <p className="text-white/30 text-xs mb-3">ou</p>
+                                        <p className="text-content/30 text-xs mb-3">ou</p>
                                         <a
                                             href={`https://wa.me/21622307649?text=${waMessage}`}
                                             target="_blank"

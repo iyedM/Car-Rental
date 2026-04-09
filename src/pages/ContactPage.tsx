@@ -46,7 +46,7 @@ export default function ContactPage() {
                                 </svg>
                                 Réserver via WhatsApp maintenant
                             </a>
-                            <p className="text-white/30 text-sm mt-4">+216 22 307 649 · Réponse garantie en 15 min</p>
+                            <p className="text-dark-900/30 text-sm mt-4">+216 22 307 649 · Réponse garantie en 15 min</p>
                         </motion.div>
 
                         {/* Locations grid */}
@@ -63,14 +63,14 @@ export default function ContactPage() {
                                     <div className="w-10 h-10 bg-brand-500/20 rounded-xl flex items-center justify-center mb-4">
                                         <MapPin size={18} className="text-brand-400" />
                                     </div>
-                                    <h3 className="font-display font-semibold text-white mb-2">{loc.name}</h3>
-                                    <p className="text-white/40 text-sm mb-4 leading-relaxed">{loc.address}</p>
+                                    <h3 className="font-display font-semibold text-dark-900 mb-2">{loc.name}</h3>
+                                    <p className="text-dark-900/40 text-sm mb-4 leading-relaxed">{loc.address}</p>
                                     <div className="space-y-2">
-                                        <div className="flex items-center gap-2 text-white/50 text-sm">
+                                        <div className="flex items-center gap-2 text-dark-900/50 text-sm">
                                             <Clock size={13} className="text-brand-400 flex-shrink-0" />
                                             {loc.hours}
                                         </div>
-                                        <a href={`tel:${loc.phone}`} className="flex items-center gap-2 text-white/50 text-sm hover:text-brand-400 transition-colors">
+                                        <a href={`tel:${loc.phone}`} className="flex items-center gap-2 text-dark-900/50 text-sm hover:text-brand-400 transition-colors">
                                             <Phone size={13} className="text-brand-400 flex-shrink-0" />
                                             {loc.phone}
                                         </a>
@@ -86,24 +86,24 @@ export default function ContactPage() {
                             viewport={{ once: true }}
                             className="mt-16 max-w-2xl mx-auto glass-card rounded-3xl p-8"
                         >
-                            <h2 className="font-display font-bold text-white text-2xl mb-6">Envoyez-nous un message</h2>
+                            <h2 className="font-display font-bold text-dark-900 text-2xl mb-6">Envoyez-nous un message</h2>
                             <div className="space-y-4">
                                 <div className="grid sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label className="block text-white/40 text-xs uppercase tracking-wide mb-2">Nom complet</label>
+                                        <label className="block text-dark-900/40 text-xs uppercase tracking-wide mb-2">Nom complet</label>
                                         <input type="text" placeholder="Ahmed Ben Ali" className="input" />
                                     </div>
                                     <div>
-                                        <label className="block text-white/40 text-xs uppercase tracking-wide mb-2">Téléphone</label>
+                                        <label className="block text-dark-900/40 text-xs uppercase tracking-wide mb-2">Téléphone</label>
                                         <input type="tel" placeholder="+216 22 307 649" className="input" />
                                     </div>
                                 </div>
                                 <div>
-                                    <label className="block text-white/40 text-xs uppercase tracking-wide mb-2">Email</label>
+                                    <label className="block text-dark-900/40 text-xs uppercase tracking-wide mb-2">Email</label>
                                     <input type="email" placeholder="votre@email.com" className="input" />
                                 </div>
                                 <div>
-                                    <label className="block text-white/40 text-xs uppercase tracking-wide mb-2">Message</label>
+                                    <label className="block text-dark-900/40 text-xs uppercase tracking-wide mb-2">Message</label>
                                     <textarea
                                         rows={4}
                                         placeholder="Bonjour, je souhaite réserver..."

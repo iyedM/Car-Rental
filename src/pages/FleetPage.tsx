@@ -78,7 +78,7 @@ export default function FleetPage() {
                                 {/* Top row: search + sort */}
                                 <div className="flex flex-col sm:flex-row gap-3">
                                     <div className="relative flex-1">
-                                        <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/30 pointer-events-none" />
+                                        <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-content/30 pointer-events-none" />
                                         <input
                                             type="text"
                                             placeholder="Rechercher un véhicule..."
@@ -87,7 +87,7 @@ export default function FleetPage() {
                                             className="input pl-10 text-sm"
                                         />
                                         {search && (
-                                            <button onClick={() => setSearch('')} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/70">
+                                            <button onClick={() => setSearch('')} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-content/30 hover:text-content/70">
                                                 <X size={14} />
                                             </button>
                                         )}
@@ -111,8 +111,8 @@ export default function FleetPage() {
                                             key={cat}
                                             onClick={() => setCategory(cat)}
                                             className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${category === cat
-                                                ? 'bg-brand-500 text-white shadow-glow'
-                                                : 'glass-card text-white/50 hover:text-white hover:border-brand-500/30'
+                                                ? 'bg-brand-500 text-[#1c1917] shadow-glow'
+                                                : 'glass-card text-content/50 hover:text-content hover:border-brand-500/30'
                                                 }`}
                                         >
                                             {cat}
@@ -123,7 +123,7 @@ export default function FleetPage() {
                                 {/* Price range + Available filter */}
                                 <div className="flex flex-wrap items-center gap-6">
                                     <div className="flex items-center gap-3 flex-1 min-w-48">
-                                        <span className="text-white/40 text-xs whitespace-nowrap">Prix max: <span className="text-brand-400 font-semibold">{maxPrice} DT</span></span>
+                                        <span className="text-content/40 text-xs whitespace-nowrap">Prix max: <span className="text-brand-400 font-semibold">{maxPrice} DT</span></span>
                                         <input
                                             type="range"
                                             min={80}
@@ -137,12 +137,12 @@ export default function FleetPage() {
                                     <label className="flex items-center gap-2 cursor-pointer">
                                         <div
                                             onClick={() => setAvailableOnly(!availableOnly)}
-                                            className={`w-10 h-5.5 rounded-full transition-all duration-200 relative cursor-pointer ${availableOnly ? 'bg-brand-500' : 'bg-dark-500'}`}
+                                            className={`w-10 h-5.5 rounded-full transition-all duration-200 relative cursor-pointer ${availableOnly ? 'bg-brand-500' : 'bg-content/20'}`}
                                             style={{ height: '22px', width: '40px' }}
                                         >
                                             <div className={`absolute top-0.5 w-4 h-4 bg-white rounded-full shadow transition-all duration-200 ${availableOnly ? 'left-5' : 'left-0.5'}`} />
                                         </div>
-                                        <span className="text-white/50 text-sm">Disponibles uniquement</span>
+                                        <span className="text-content/50 text-sm">Disponibles uniquement</span>
                                     </label>
                                 </div>
                             </div>
@@ -154,8 +154,8 @@ export default function FleetPage() {
                 <section className="px-4 sm:px-6 lg:px-8 pb-20">
                     <div className="max-w-7xl mx-auto">
                         <div className="flex items-center justify-between mb-6">
-                            <p className="text-white/40 text-sm">
-                                <span className="text-white font-semibold">{filtered.length}</span> véhicule{filtered.length !== 1 ? 's' : ''} trouvé{filtered.length !== 1 ? 's' : ''}
+                            <p className="text-dark-900/40 text-sm">
+                                <span className="text-content font-semibold">{filtered.length}</span> véhicule{filtered.length !== 1 ? 's' : ''} trouvé{filtered.length !== 1 ? 's' : ''}
                             </p>
                         </div>
 
@@ -178,8 +178,8 @@ export default function FleetPage() {
                                     className="text-center py-24"
                                 >
                                     <div className="text-6xl mb-4">🔍</div>
-                                    <h3 className="font-display font-semibold text-white text-xl mb-2">Aucun véhicule trouvé</h3>
-                                    <p className="text-white/40 text-sm mb-6">Essayez de modifier vos filtres</p>
+                                    <h3 className="font-display font-semibold text-content text-xl mb-2">Aucun véhicule trouvé</h3>
+                                    <p className="text-content/40 text-sm mb-6">Essayez de modifier vos filtres</p>
                                     <button
                                         onClick={() => { setCategory('Tous'); setSearch(''); setAvailableOnly(false); setMaxPrice(300); }}
                                         className="btn-primary text-sm"

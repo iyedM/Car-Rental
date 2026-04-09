@@ -31,12 +31,12 @@ function ToastItem({ toast }: { toast: Toast }) {
             <div className="flex items-start gap-3">
                 <div className="mt-0.5 flex-shrink-0">{icons[toast.type]}</div>
                 <div className="flex-1 min-w-0">
-                    <p className="font-semibold text-white text-sm">{toast.title}</p>
-                    <p className="text-white/60 text-xs mt-0.5 leading-relaxed">{toast.message}</p>
+                    <p className="font-semibold text-dark-900 text-sm">{toast.title}</p>
+                    <p className="text-dark-900/60 text-xs mt-0.5 leading-relaxed">{toast.message}</p>
                 </div>
                 <button
                     onClick={() => removeToast(toast.id)}
-                    className="flex-shrink-0 text-white/30 hover:text-white/70 transition-colors"
+                    className="flex-shrink-0 text-dark-900/30 hover:text-dark-900/70 transition-colors"
                 >
                     <X size={16} />
                 </button>

@@ -79,27 +79,27 @@ export default function CarCard({ car, index = 0 }: CarCardProps) {
                 {/* Name & Rating */}
                 <div className="flex items-start justify-between mb-3">
                     <div>
-                        <h3 className="font-display font-semibold text-white text-lg leading-tight">{car.name}</h3>
-                        <p className="text-white/40 text-xs mt-0.5">{car.year} · {car.color}</p>
+                        <h3 className="font-display font-semibold text-content text-lg leading-tight">{car.name}</h3>
+                        <p className="text-content/40 text-xs mt-0.5">{car.year} · {car.color}</p>
                     </div>
                     <div className="flex items-center gap-1">
                         <Star size={13} className="star-filled fill-current" />
-                        <span className="text-white font-semibold text-sm">{car.rating}</span>
-                        <span className="text-white/30 text-xs">({car.reviews})</span>
+                        <span className="text-content font-semibold text-sm">{car.rating}</span>
+                        <span className="text-content/30 text-xs">({car.reviews})</span>
                     </div>
                 </div>
 
                 {/* Specs row */}
-                <div className="flex items-center gap-4 mb-5 py-3 border-y border-white/5">
-                    <div className="flex items-center gap-1.5 text-white/50 text-xs">
+                <div className="flex items-center gap-4 mb-5 py-3 border-y border-content/10">
+                    <div className="flex items-center gap-1.5 text-content/50 text-xs">
                         <Users size={13} className="text-brand-400" />
                         <span>{car.seats} places</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-white/50 text-xs">
+                    <div className="flex items-center gap-1.5 text-content/50 text-xs">
                         <Settings size={13} className="text-brand-400" />
                         <span>{car.transmission === 'Automatique' ? 'Auto' : 'Manuel'}</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-white/50 text-xs">
+                    <div className="flex items-center gap-1.5 text-content/50 text-xs">
                         <Fuel size={13} className="text-brand-400" />
                         <span>{car.fuel}</span>
                     </div>
@@ -126,7 +126,7 @@ export default function CarCard({ car, index = 0 }: CarCardProps) {
                             </a>
                         </>
                     ) : (
-                        <button disabled className="w-full py-2.5 rounded-xl bg-white/5 text-white/30 text-sm font-medium cursor-not-allowed">
+                        <button disabled className="w-full py-2.5 rounded-xl bg-content/5 text-content/30 text-sm font-medium cursor-not-allowed">
                             {t('fleet.unavailable')}
                         </button>
                     )}

@@ -43,7 +43,7 @@ export default function CarDetailPage() {
         return (
             <div className="min-h-screen flex items-center justify-center">
                 <div className="text-center">
-                    <p className="text-white/40 text-xl mb-4">Véhicule introuvable</p>
+                    <p className="text-dark-900/40 text-xl mb-4">Véhicule introuvable</p>
                     <Link to="/flotte" className="btn-primary">Retour à la flotte</Link>
                 </div>
             </div>
@@ -78,12 +78,12 @@ export default function CarDetailPage() {
             <main className="pt-20">
                 {/* Breadcrumb */}
                 <div className="px-4 sm:px-6 lg:px-8 py-4">
-                    <div className="max-w-7xl mx-auto flex items-center gap-2 text-sm text-white/40">
-                        <Link to="/" className="hover:text-white transition-colors">Accueil</Link>
+                    <div className="max-w-7xl mx-auto flex items-center gap-2 text-sm text-dark-900/40">
+                        <Link to="/" className="hover:text-dark-900 transition-colors">Accueil</Link>
                         <span>/</span>
-                        <Link to="/flotte" className="hover:text-white transition-colors">Flotte</Link>
+                        <Link to="/flotte" className="hover:text-dark-900 transition-colors">Flotte</Link>
                         <span>/</span>
-                        <span className="text-white/70">{car.name}</span>
+                        <span className="text-content/70">{car.name}</span>
                     </div>
                 </div>
 
@@ -125,7 +125,7 @@ export default function CarDetailPage() {
                                         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
                                             {gallery.map((_, i) => (
                                                 <button key={i} onClick={() => setGalleryIndex(i)}
-                                                    className={`w-2 h-2 rounded-full transition-all duration-200 ${i === galleryIndex ? 'bg-brand-400 w-6' : 'bg-white/40'}`}
+                                                    className={`w-2 h-2 rounded-full transition-all duration-200 ${i === galleryIndex ? 'bg-brand-400 w-6' : 'bg-dark-900/40'}`}
                                                 />
                                             ))}
                                         </div>
@@ -162,8 +162,8 @@ export default function CarDetailPage() {
                             <div className="mb-8">
                                 <div className="flex items-start justify-between mb-4">
                                     <div>
-                                        <h1 className="font-display font-black text-4xl text-white mb-1">{car.name}</h1>
-                                        <div className="flex items-center gap-3 text-white/40 text-sm">
+                                        <h1 className="font-display font-black text-4xl text-content mb-1">{car.name}</h1>
+                                        <div className="flex items-center gap-3 text-content/40 text-sm">
                                             <span>{car.year}</span>
                                             <span>·</span>
                                             <span>{car.color}</span>
@@ -178,8 +178,8 @@ export default function CarDetailPage() {
                                         </div>
                                         <div className="flex items-center gap-1 justify-end mt-1">
                                             <Star size={14} className="star-filled fill-current" />
-                                            <span className="text-white font-semibold">{car.rating}</span>
-                                            <span className="text-white/30 text-xs">({car.reviews} avis)</span>
+                                            <span className="text-content font-semibold">{car.rating}</span>
+                                            <span className="text-content/30 text-xs">({car.reviews} avis)</span>
                                         </div>
                                     </div>
                                 </div>
@@ -194,19 +194,19 @@ export default function CarDetailPage() {
                                     ].map(spec => (
                                         <div key={spec.label} className="glass-card rounded-xl p-3 flex items-center gap-2">
                                             <span className="text-brand-400">{spec.icon}</span>
-                                            <span className="text-white/70 text-sm">{spec.label}</span>
+                                            <span className="text-content/70 text-sm">{spec.label}</span>
                                         </div>
                                     ))}
                                 </div>
 
-                                <p className="text-white/60 text-base leading-relaxed mb-6">{car.description}</p>
+                                <p className="text-content/60 text-base leading-relaxed mb-6">{car.description}</p>
 
                                 {/* Features */}
                                 <div>
-                                    <h3 className="font-semibold text-white mb-3 text-sm uppercase tracking-wider text-white/50">Équipements</h3>
+                                    <h3 className="font-semibold text-content mb-3 text-sm uppercase tracking-wider text-content/50">Équipements</h3>
                                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                                         {car.features.map(f => (
-                                            <div key={f} className="flex items-center gap-2 text-white/60 text-sm">
+                                            <div key={f} className="flex items-center gap-2 text-content/60 text-sm">
                                                 <Check size={14} className="text-brand-400 flex-shrink-0" />
                                                 {f}
                                             </div>
@@ -218,9 +218,9 @@ export default function CarDetailPage() {
                             {/* Reviews */}
                             {reviews.length > 0 && (
                                 <div className="mb-10">
-                                    <h2 className="font-display font-bold text-2xl text-white mb-6">
+                                    <h2 className="font-display font-bold text-2xl text-content mb-6">
                                         Avis clients
-                                        <span className="ml-3 text-base font-normal text-white/40">({reviews.length})</span>
+                                        <span className="ml-3 text-base font-normal text-content/40">({reviews.length})</span>
                                     </h2>
                                     <div className="space-y-4">
                                         {reviews.map(r => (
@@ -235,15 +235,15 @@ export default function CarDetailPage() {
                                                     <img src={r.avatar} alt={r.author} className="w-10 h-10 rounded-full flex-shrink-0" />
                                                     <div className="flex-1">
                                                         <div className="flex items-center justify-between mb-1">
-                                                            <p className="font-semibold text-white text-sm">{r.author}</p>
-                                                            <span className="text-white/30 text-xs">{r.date}</span>
+                                                            <p className="font-semibold text-content text-sm">{r.author}</p>
+                                                            <span className="text-content/30 text-xs">{r.date}</span>
                                                         </div>
                                                         <div className="flex gap-0.5 mb-2">
                                                             {[...Array(5)].map((_, i) => (
                                                                 <Star key={i} size={12} className={i < r.rating ? 'star-filled fill-current' : 'star-empty'} />
                                                             ))}
                                                         </div>
-                                                        <p className="text-white/60 text-sm leading-relaxed">{r.comment}</p>
+                                                        <p className="text-content/60 text-sm leading-relaxed">{r.comment}</p>
                                                     </div>
                                                 </div>
                                             </motion.div>
@@ -257,19 +257,19 @@ export default function CarDetailPage() {
                         <div className="lg:block">
                             <div className="sticky top-24">
                                 <div className="glass-card rounded-3xl p-6">
-                                    <h3 className="font-display font-bold text-white text-xl mb-5">Réserver ce véhicule</h3>
+                                    <h3 className="font-display font-bold text-content text-xl mb-5">Réserver ce véhicule</h3>
 
                                     <div className="space-y-4 mb-5">
                                         <div>
-                                            <label className="block text-white/40 text-xs uppercase tracking-wide mb-1.5">Date de début</label>
+                                            <label className="block text-content/40 text-xs uppercase tracking-wide mb-1.5">Date de début</label>
                                             <input type="date" value={startDate} min={today} onChange={e => setStartDate(e.target.value)} className="input text-sm" />
                                         </div>
                                         <div>
-                                            <label className="block text-white/40 text-xs uppercase tracking-wide mb-1.5">Date de fin</label>
+                                            <label className="block text-dark-900/40 text-xs uppercase tracking-wide mb-1.5">Date de fin</label>
                                             <input type="date" value={endDate} min={startDate} onChange={e => setEndDate(e.target.value)} className="input text-sm" />
                                         </div>
                                         <div>
-                                            <label className="block text-white/40 text-xs uppercase tracking-wide mb-1.5">Lieu de prise en charge</label>
+                                            <label className="block text-dark-900/40 text-xs uppercase tracking-wide mb-1.5">Lieu de prise en charge</label>
                                             <div className="relative">
                                                 <MapPin size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-brand-400" />
                                                 <select value={location} onChange={e => setLocation(e.target.value)} className="input text-sm pl-9">
@@ -280,7 +280,7 @@ export default function CarDetailPage() {
 
                                         {/* Payment */}
                                         <div>
-                                            <label className="block text-white/40 text-xs uppercase tracking-wide mb-1.5">Paiement</label>
+                                            <label className="block text-content/40 text-xs uppercase tracking-wide mb-1.5">Paiement</label>
                                             <div className="grid grid-cols-2 gap-2">
                                                 {[
                                                     { value: 'on_delivery', label: 'À la livraison' },
@@ -290,8 +290,8 @@ export default function CarDetailPage() {
                                                         key={opt.value}
                                                         onClick={() => setPayment(opt.value as any)}
                                                         className={`py-2.5 rounded-xl text-xs font-medium transition-all duration-200 ${payment === opt.value
-                                                                ? 'bg-brand-500/20 border border-brand-500/40 text-brand-400'
-                                                                : 'glass-card text-white/50 hover:text-white'
+                                                            ? 'bg-brand-500/20 border border-brand-500/40 text-brand-400'
+                                                            : 'glass-card text-content/50 hover:text-content'
                                                             }`}
                                                     >
                                                         {opt.label}
@@ -302,17 +302,17 @@ export default function CarDetailPage() {
                                     </div>
 
                                     {/* Price calc */}
-                                    <div className="bg-dark-700/50 rounded-xl p-4 mb-5 space-y-2">
+                                    <div className="bg-light-300/50 rounded-xl p-4 mb-5 space-y-2">
                                         <div className="flex justify-between text-sm">
-                                            <span className="text-white/50">{car.price} DT × {days} jour{days > 1 ? 's' : ''}</span>
-                                            <span className="text-white">{car.price * days} DT</span>
+                                            <span className="text-dark-900/50">{car.price} DT × {days} jour{days > 1 ? 's' : ''}</span>
+                                            <span className="text-dark-900">{car.price * days} DT</span>
                                         </div>
                                         <div className="flex justify-between text-sm">
-                                            <span className="text-white/50">Assurance incluse</span>
+                                            <span className="text-dark-900/50">Assurance incluse</span>
                                             <span className="text-emerald-400">Gratuit</span>
                                         </div>
-                                        <div className="border-t border-white/10 pt-2 flex justify-between">
-                                            <span className="text-white font-semibold">Total</span>
+                                        <div className="border-t border-content/10 pt-2 flex justify-between">
+                                            <span className="text-content font-semibold">Total</span>
                                             <span className="font-display font-bold text-xl gradient-text">{total} DT</span>
                                         </div>
                                     </div>
@@ -325,7 +325,7 @@ export default function CarDetailPage() {
                                                 className="btn-primary w-full flex items-center justify-center gap-2 py-4 mb-3"
                                             >
                                                 {booking ? (
-                                                    <><span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" /> Traitement...</>
+                                                    <><span className="w-4 h-4 border-2 border-dark-900/40 border-t-white rounded-full animate-spin" /> Traitement...</>
                                                 ) : booked ? (
                                                     <>✓ Réservation confirmée!</>
                                                 ) : (
@@ -346,7 +346,7 @@ export default function CarDetailPage() {
                                     ) : (
                                         <div className="text-center py-4">
                                             <span className="badge-red text-sm py-2 px-4">Véhicule actuellement indisponible</span>
-                                            <p className="text-white/40 text-xs mt-3">Contactez-nous pour connaître les disponibilités</p>
+                                            <p className="text-content/40 text-xs mt-3">Contactez-nous pour connaître les disponibilités</p>
                                             <a href="tel:+21622307649" className="btn-ghost mt-3 block text-center text-sm">
                                                 +216 22 307 649
                                             </a>
@@ -357,7 +357,7 @@ export default function CarDetailPage() {
                                 {/* Trust badges */}
                                 <div className="mt-4 flex flex-wrap gap-2 justify-center">
                                     {['🔒 Paiement sécurisé', '✅ Annulation flexible', '🚗 Assurance incluse'].map(badge => (
-                                        <span key={badge} className="text-white/30 text-xs px-3 py-1 glass-card rounded-full">{badge}</span>
+                                        <span key={badge} className="text-content/30 text-xs px-3 py-1 glass-card rounded-full">{badge}</span>
                                     ))}
                                 </div>
                             </div>

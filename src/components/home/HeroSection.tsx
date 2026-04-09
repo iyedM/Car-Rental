@@ -85,7 +85,7 @@ export default function HeroSection() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, delay: 0.1 }}
-                            className="font-display font-black text-5xl md:text-6xl lg:text-7xl text-white leading-[1.05] mb-6"
+                            className="font-display font-black text-5xl md:text-6xl lg:text-7xl text-dark-900 leading-[1.05] mb-6"
                             style={{ whiteSpace: 'pre-line' }}
                         >
                             {t('hero.title').split('\n').map((line, i) => (
@@ -99,7 +99,7 @@ export default function HeroSection() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.25 }}
-                            className="text-white/60 text-lg leading-relaxed mb-8 max-w-lg"
+                            className="text-content/60 text-lg leading-relaxed mb-8 max-w-lg"
                         >
                             {t('hero.subtitle')}
                         </motion.p>
@@ -114,7 +114,7 @@ export default function HeroSection() {
                             {locations.map(loc => (
                                 <span
                                     key={loc}
-                                    className="flex items-center gap-1.5 glass-card px-3 py-1.5 rounded-full text-white/60 text-xs"
+                                    className="flex items-center gap-1.5 glass-card px-3 py-1.5 rounded-full text-content/60 text-xs"
                                 >
                                     <MapPin size={11} className="text-brand-400" />
                                     {loc}
@@ -149,17 +149,17 @@ export default function HeroSection() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.5, delay: 0.6 }}
-                            className="flex flex-wrap gap-6 mt-10 pt-10 border-t border-white/6"
+                            className="flex flex-wrap gap-6 mt-10 pt-10 border-t border-content/10"
                         >
-                            <div className="flex items-center gap-2 text-white/50 text-sm">
+                            <div className="flex items-center gap-2 text-dark-900/50 text-sm">
                                 <Shield size={16} className="text-brand-400" />
                                 <span>Assurance incluse</span>
                             </div>
-                            <div className="flex items-center gap-2 text-white/50 text-sm">
+                            <div className="flex items-center gap-2 text-dark-900/50 text-sm">
                                 <Clock size={16} className="text-brand-400" />
                                 <span>Réponse en 15 min</span>
                             </div>
-                            <div className="flex items-center gap-2 text-white/50 text-sm">
+                            <div className="flex items-center gap-2 text-content/50 text-sm">
                                 <Star size={16} className="text-brand-400 fill-current" />
                                 <span>4.9/5 sur 250+ avis</span>
                             </div>
@@ -194,11 +194,11 @@ export default function HeroSection() {
                                         <div className="glass-card rounded-2xl p-4 flex items-center justify-between">
                                             <div>
                                                 <p className="text-white font-semibold font-display">Mercedes GLC 2025</p>
-                                                <p className="text-white/50 text-xs mt-0.5">SUV Premium · 4MATIC</p>
+                                                <p className="text-white/70 text-xs mt-0.5">SUV Premium · 4MATIC</p>
                                             </div>
                                             <div className="text-right">
                                                 <p className="text-brand-400 font-bold text-xl font-display">220 DT</p>
-                                                <p className="text-white/40 text-xs">/jour</p>
+                                                <p className="text-white/70 text-xs">/jour</p>
                                             </div>
                                         </div>
                                     </div>
@@ -217,7 +217,7 @@ export default function HeroSection() {
                                     </div>
                                     <div>
                                         <p className="text-white font-semibold text-sm leading-none">Disponible</p>
-                                        <p className="text-white/40 text-xs mt-1">Dès aujourd'hui</p>
+                                        <p className="text-white/70 text-xs mt-1">Dès aujourd'hui</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -235,7 +235,7 @@ export default function HeroSection() {
                                     <Star size={14} className="text-yellow-400 fill-current" />
                                 </div>
                                 <p className="text-white text-xs font-medium">"Service impeccable!"</p>
-                                <p className="text-white/40 text-xs">– Ahmed B.</p>
+                                <p className="text-white/70 text-xs">– Ahmed B.</p>
                             </motion.div>
                         </div>
                     </motion.div>
@@ -246,7 +246,7 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.7 }}
-                    className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 pt-12 border-t border-white/6"
+                    className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 pt-12 border-t border-content/10"
                 >
                     {stats.map((stat, i) => (
                         <motion.div
@@ -257,7 +257,7 @@ export default function HeroSection() {
                             className="text-center"
                         >
                             <p className="font-display font-black text-4xl gradient-text">{stat.value}</p>
-                            <p className="text-white/40 text-sm mt-1">{stat.label}</p>
+                            <p className="text-content/40 text-sm mt-1">{stat.label}</p>
                         </motion.div>
                     ))}
                 </motion.div>
@@ -273,7 +273,7 @@ export default function HeroSection() {
                 <motion.div
                     animate={{ y: [0, 8, 0] }}
                     transition={{ duration: 2, repeat: Infinity }}
-                    className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center pt-2"
+                    className="w-6 h-10 border-2 border-content/20 rounded-full flex justify-center pt-2"
                 >
                     <div className="w-1 h-2 bg-brand-400 rounded-full" />
                 </motion.div>

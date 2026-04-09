@@ -64,7 +64,7 @@ export default function ImpactSection() {
                                 {kpi.icon}
                             </div>
                             <p className={`font-display font-black text-3xl ${kpi.color}`}>{kpi.value}</p>
-                            <p className="text-white/50 text-sm mt-1">{kpi.label}</p>
+                            <p className="text-content/50 text-sm mt-1">{kpi.label}</p>
                         </motion.div>
                     ))}
                 </div>
@@ -100,7 +100,7 @@ export default function ImpactSection() {
                                     <div className="w-5 h-5 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                                         <X size={10} className="text-red-400" />
                                     </div>
-                                    <span className="text-white/60 text-sm leading-relaxed">{item}</span>
+                                    <span className="text-content/60 text-sm leading-relaxed">{item}</span>
                                 </motion.li>
                             ))}
                         </ul>
@@ -135,7 +135,7 @@ export default function ImpactSection() {
                                     <div className="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                                         <Check size={10} className="text-emerald-400" />
                                     </div>
-                                    <span className="text-white/80 text-sm leading-relaxed font-medium">{item}</span>
+                                    <span className="text-content/80 text-sm leading-relaxed font-medium">{item}</span>
                                 </motion.li>
                             ))}
                         </ul>

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useCallback, type ReactNode } from 'react';
+import React, { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from 'react';
 
 // ─── Language Context ─────────────────────────────────────────────
 type Lang = 'fr' | 'en';
@@ -69,11 +69,15 @@ interface ToastContextType {
 const ToastContext = createContext<ToastContextType>({} as ToastContextType);
 
 // ─── App Context ──────────────────────────────────────────────────
+type Theme = 'light' | 'dark';
+
 interface AppContextType {
     notificationCount: number;
     setNotificationCount: React.Dispatch<React.SetStateAction<number>>;
     simulatingActivity: boolean;
     setSimulatingActivity: React.Dispatch<React.SetStateAction<boolean>>;
+    theme: Theme;
+    toggleTheme: () => void;
 }
 
 const AppContext = createContext<AppContextType>({} as AppContextType);
@@ -84,6 +88,26 @@ export function AppProvider({ children }: { children: ReactNode }) {
     const [toasts, setToasts] = useState<Toast[]>([]);
     const [notificationCount, setNotificationCount] = useState(3);
     const [simulatingActivity, setSimulatingActivity] = useState(false);
+
+    const [theme, setTheme] = useState<Theme>(() => {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'dark' || saved === 'light') return saved;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    });
+
+    useEffect(() => {
+        const root = window.document.documentElement;
+        if (theme === 'dark') {
+            root.classList.add('dark');
+        } else {
+            root.classList.remove('dark');
+        }
+        localStorage.setItem('theme', theme);
+    }, [theme]);
+
+    const toggleTheme = useCallback(() => {
+        setTheme(prev => prev === 'light' ? 'dark' : 'light');
+    }, []);
 
     const t = useCallback((key: string): string => {
         return translations[key]?.[lang] ?? key;
@@ -104,7 +128,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
     return (
         <LangContext.Provider value={{ lang, setLang, t }}>
             <ToastContext.Provider value={{ toasts, addToast, removeToast }}>
-                <AppContext.Provider value={{ notificationCount, setNotificationCount, simulatingActivity, setSimulatingActivity }}>
+                <AppContext.Provider value={{ notificationCount, setNotificationCount, simulatingActivity, setSimulatingActivity, theme, toggleTheme }}>
                     {children}
                 </AppContext.Provider>
             </ToastContext.Provider>
